@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Задание 1 
+    
+    <h1 class="text">Привет пользователь!</h1>
+         <button class="hide">Скрыть</button><br>
+
+   <br> Задание 2 <br>
+  <p class="color-text">Поменять цвет текста на синий</p> 
+  <button class="color-btn">Изменить цвет текста</button><br>
+  
+  <br> Задание 3 <br> 
+
+<br><button class="change-h1">Изменить текст</button><br>
+   
+  <br> Задание 4
+   <p class="description">This is description</p>
+   <p class="description">This is description</p>
+   <p class="description">This is description</p><br>
+   
+
+   Задание 5
+
+   <p class="descriptions">This is description</p>
+   <p class="title">Книжный клуб</p>
+   <p class="descriptions">This is description</p>
+   <p class="price">Цена за книгу</p>
+   <p class="descriptions">This is description</p><br>
+
+
+  <br> Задание 6 <br>
+   <button class="btn">Добавить элемент</button><br>
+   <h2 class="new-content"></h2>
+
+   Задание 7
+   <p class="new-description">This is description</p>
+   <p class="new-title">Книжный клуб</p>
+   <p class="new-price">Цена за книгу</p>
+   <button class="remove-btn">Удалить элемент элемент</button>
+
+   <script>
+
+const textEl = document.querySelector('.text')
+const hideBtn = document.querySelector('.hide')
+
+const colorTextEl = document.querySelector('.color-text');
+const colorBtnEl = document.querySelector('.color-btn');
+
+const changeBtn = document.querySelector('.change-h1');
+const allDescriptions = document.querySelectorAll('.description')
+const Descriptions = document.querySelectorAll('.descriptions')
+
+const contentEl = document.querySelector('.new-content');
+const btnEl = document.querySelector('.btn')
+
+const newDescriptionEl = document.querySelector('.new-description');
+const removeBtnEl = document.querySelector('.remove-btn')
+
+
+hideBtn.addEventListener('click',() => {
+    
+    if (textEl.style.display === 'none') {
+    textEl.style.display = 'block';
+  } else {
+    textEl.style.display = 'none';
+  }
+})
+colorBtnEl.addEventListener('click', () => {
+    colorTextEl.style.color = 'blue'
+})
+
+changeBtn.addEventListener('click', () => {
+textEl.textContent = 'Привет, Мир!'
+})
+
+allDescriptions.forEach(description => {
+   description.textContent = 'Измененный текст.';
+   
+});
+
+Descriptions.forEach(description => {
+   description.textContent = 'Новый текст';
+   
+});
+
+btnEl.addEventListener('click', () => {
+const headingEl = document.createElement('h2');
+headingEl.textContent = 'Новый абзац'
+headingEl.classList.add('heading')
+contentEl.appendChild(headingEl)
+})
+
+removeBtnEl.addEventListener('click', function () {
+ newDescriptionEl.remove(); 
+});
+
+
+   </script> 
+</body>
+</html> 
